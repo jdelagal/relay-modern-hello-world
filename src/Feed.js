@@ -10,7 +10,7 @@ import FeedEntry from './FeedEntry';
 const Feed = createFragmentContainer(
   ({ data }) => (
     <ol>
-      {data.map(entry => (
+      {data.map(entry => entry.repository && (
         <li key={`${entry.repository.owner.login}/${entry.repository.name}`}>
           <FeedEntry data={entry} />
         </li>
